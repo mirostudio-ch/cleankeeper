@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="100" cy="100" r="85"/>
+    </clipPath>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <!-- Text on path -->
+  <defs>
+    <path id="topArc" d="M 30,100 a 70,70 0 0,1 140,0"/>
+    <path id="bottomArc" d="M 170,100 a 70,70 0 0,1 -140,0"/>
+  </defs>
+  <text fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" letter-spacing="4">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">CLEAN</textPath>
+  </text>
+  <text fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" letter-spacing="4">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">KEEPER</textPath>
+  </text>
+  <!-- Goalkeeper figure -->
+  <g transform="translate(100,95) rotate(-15)" stroke="#5bc0de" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- body -->
+    <circle cx="0" cy="-28" r="8" fill="#5bc0de" stroke="none"/>
+    <line x1="0" y1="-20" x2="0" y2="10"/>
+    <!-- arms reaching -->
+    <line x1="0" y1="-12" x2="-20" y2="-25"/>
+    <line x1="0" y1="-12" x2="20" y2="-25"/>
+    <!-- gloves -->
+    <rect x="-24" y="-29" width="8" height="6" rx="1" fill="#5bc0de"/>
+    <rect x="16" y="-29" width="8" height="6" rx="1" fill="#5bc0de"/>
+    <!-- legs -->
+    <line x1="0" y1="10" x2="-10" y2="28"/>
+    <line x1="0" y1="10" x2="10" y2="28"/>
+  </g>
+  <!-- Stars -->
+  <g fill="#5bc0de">
+    <polygon points="38,140 40,134 42,140 48,140 43,144 45,150 40,146 35,150 37,144 32,140" transform="scale(0.8) translate(10,30)"/>
+    <polygon points="38,140 40,134 42,140 48,140 43,144 45,150 40,146 35,150 37,144 32,140" transform="scale(0.6) translate(80,70)"/>
+  </g>
+</svg>
