@@ -1,4 +1,4 @@
-/* ===== DESIGN TOKENS — LIGHT EDITORIAL ===== */
+/* ===== DESIGN TOKENS — LIGHT + CYAN ===== */
 :root {
     --bg: #f7f5f0;
     --bg-alt: #eeebe4;
@@ -7,19 +7,19 @@
     --text: #1e1e1e;
     --text-mid: #555;
     --text-light: #999;
-    --accent: #2a7f62;
-    --accent-dark: #1d5c47;
-    --accent-light: #e8f5ee;
-    --accent-glow: rgba(42, 127, 98, .2);
-    --pop: #e8734a;
-    --pop-light: #fef0ec;
+    --accent: #3eb8d4;
+    --accent-dark: #2a96b0;
+    --accent-light: #e6f6fa;
+    --accent-glow: rgba(62, 184, 212, .2);
+    --pop: #1a1a1a;
+    --pop-light: #f2f2f2;
     --black: #1a1a1a;
     --white: #ffffff;
     --border: rgba(0, 0, 0, .07);
     --shadow-sm: 0 1px 4px rgba(0,0,0,.04);
     --shadow-md: 0 4px 24px rgba(0,0,0,.06);
     --shadow-lg: 0 12px 48px rgba(0,0,0,.08);
-    --shadow-lift: 0 16px 40px rgba(42,127,98,.12);
+    --shadow-lift: 0 16px 40px rgba(62,184,212,.15);
     --radius: 18px;
     --radius-sm: 10px;
     --radius-xs: 6px;
@@ -30,7 +30,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
-html { scroll-behavior: smooth; scroll-padding-top: 100px }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; overflow-x: hidden }
 
 body {
     font-family: var(--body);
@@ -38,11 +38,13 @@ body {
     color: var(--text);
     line-height: 1.75;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    max-width: 100vw
 }
 
 a { color: var(--accent); text-decoration: none; transition: color var(--tr) }
-a:hover { color: var(--pop) }
+a:hover { color: var(--accent-dark) }
 img { max-width: 100%; display: block }
 ul { list-style: none }
 
@@ -173,8 +175,7 @@ ul { list-style: none }
     font-size: .85rem;
     transition: all var(--tr);
     box-shadow: var(--shadow-md);
-    white-space: nowrap;
-    min-width: max-content
+    white-space: nowrap
 }
 .pill-phone { background: var(--accent); color: #fff }
 .pill-phone:hover { background: var(--accent-dark); color: #fff; transform: scale(1.05) }
@@ -463,9 +464,10 @@ ul { list-style: none }
     font-size: clamp(1.8rem, 4.5vw, 3.2rem);
     font-weight: 800;
     color: #fff;
-    line-height: 1.15
+    line-height: 1.15;
+    padding: 0 24px
 }
-.img-break-text span { color: var(--pop); font-style: italic }
+.img-break-text span { color: var(--accent); font-style: italic }
 
 /* ===== BENTO SERVICES ===== */
 .leistungen { padding: 5.5rem 0 }
@@ -763,7 +765,7 @@ ul { list-style: none }
     bottom: -30px; left: -30px;
     width: 100px; height: 100px;
     border-radius: 50%;
-    background: var(--pop);
+    background: var(--accent-dark);
     opacity: .06
 }
 .leisure-box h2 {
@@ -861,7 +863,7 @@ ul { list-style: none }
 .form-ok p { font-size: 1rem; color: var(--text) }
 
 /* ===== MAP ===== */
-.full-map { height: 420px; width: 100%; position: relative }
+.full-map { height: 420px; width: 100%; position: relative; overflow: hidden }
 .full-map iframe { width: 100%; height: 100%; display: block }
 
 /* ===== FOOTER ===== */
@@ -881,8 +883,7 @@ ul { list-style: none }
     height: 44px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: .75
+    opacity: .85
 }
 .footer-brand p { font-size: .82rem; color: rgba(255,255,255,.4) }
 .footer-col h4 {
@@ -925,7 +926,7 @@ ul { list-style: none }
 }
 .cursor-glow.hovering {
     width: 44px; height: 44px;
-    background: rgba(42, 127, 98, .1)
+    background: rgba(62, 184, 212, .1)
 }
 
 /* ===== RESPONSIVE ===== */
@@ -947,21 +948,27 @@ ul { list-style: none }
     .navbar.scrolled .nav-logo-img { height: 48px }
     .trust-strip { flex-wrap: wrap; gap: 1.2rem }
     .trust-divider { display: none }
+    .hero { padding: 120px 16px 0 }
     .hero-h1 { font-size: clamp(1.8rem, 7vw, 2.6rem) }
     .hero-actions { flex-direction: column }
     .hero-actions .btn { width: 100%; justify-content: center }
+    .hero-claim-bar { margin-top: 1rem }
     .review-card { min-width: 280px }
     .parallax-bg { background-attachment: scroll }
     .fg-row { grid-template-columns: 1fr }
     .footer-top { grid-template-columns: 1fr; gap: 1.5rem }
-    /* Fixed: sticky pills keep text and don't squish */
     .pill { padding: 10px 16px; font-size: .8rem }
-    .full-map { height: 320px }
+    .full-map { height: 280px }
     .process-grid { grid-template-columns: 1fr; gap: 1rem }
     .cursor-glow { display: none }
+    .sticky-contact { bottom: 16px; right: 16px }
 }
 
 @media(max-width:480px) {
     .container { padding: 0 16px }
     .about-float { position: relative; right: 0; margin-top: .8rem }
+    .hero { padding: 110px 16px 0 }
+    .bento-card { padding: 1.5rem }
+    .kontakt-form-wrap { padding: 1.5rem }
+    .review-card { min-width: 260px; padding: 1.4rem }
 }
